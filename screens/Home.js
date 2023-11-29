@@ -16,6 +16,7 @@ import { Contact } from "./Contact";
 import { ShoppingCart } from "./ShoppingCart";
 import { Search } from "./Search";
 
+
 //fonts
 import "../assets/fonts/NeueMachina-Light.otf";
 import "../assets/fonts/NeueMachina-Regular.otf";
