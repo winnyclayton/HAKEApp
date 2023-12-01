@@ -8,10 +8,12 @@ import {
   Image,
 } from "react-native";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigation } from "@react-navigation/native";
 
 export function Stockroom(props) {
   const [user, setUser] = useState();
   const Auth = useContext(AuthContext);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (Auth.currentUser) {
@@ -33,7 +35,7 @@ export function Stockroom(props) {
   const renderItem = ({ item }) => (
     <Pressable
       onPress={() => {
-        // Navigate to the ArtistsDetail page with the selected artist's details
+        navigation.navigate("StockroomDetail")
       }}
       style={styles.stockroomItem}
     >
@@ -79,8 +81,8 @@ const styles = StyleSheet.create({
   stockroomImage: {
     flex: 1,
     width: "100%",
-    height: 190, // Set a fixed height for the image
-    resizeMode: "cover", // Maintain aspect ratio and cover the entire space
+    height: 190, 
+    resizeMode: "cover", 
   },
   artistTitle: {
     textAlign: "center",

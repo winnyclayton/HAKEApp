@@ -4,6 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 import IonIcons from "@expo/vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native-web";
 
+import iconShop from "../assets/tabicons/iconshop.png";
+
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext, useState, useEffect } from "react";
 
@@ -15,12 +17,18 @@ import { Journal } from "./Journal";
 import { Contact } from "./Contact";
 import { ShoppingCart } from "./ShoppingCart";
 import { Search } from "./Search";
-
+import { ArtistDetail } from "./ArtistDetail";
+import { StockroomDetail } from "./StockroomDetail";
+import { ArtworkEnquiry } from "./ArtworkEnquiry";
+import { ShopDetail } from "./ShopDetail";
+import { ArtSVisualiser } from "./ArtSVisualiser";
+import { JournalDetail } from "./JournalDetail";
 
 //fonts
 import "../assets/fonts/NeueMachina-Light.otf";
 import "../assets/fonts/NeueMachina-Regular.otf";
 import "../assets/fonts/NeueMachina-Ultrabold.otf";
+import "../assets/fonts/DarkerGrotesque-VariableFont_wght.ttf";
 
 import HakeLogoBlackSmall from "../assets/HakeLogoBlackSmall.png";
 
@@ -34,7 +42,7 @@ export function Home(props) {
     <View style={{ alignItems: "center" }}>
       <IonIcons name={icon} color={color} size={size} />
       <Text
-        style={{ color, fontSize: 10, fontFamily: "Neue-Light", padding: 5 }}
+        style={{ color, fontSize: 11, fontFamily: "Neue-Light", paddingTop: 5 }}
       >
         {label}
       </Text>
@@ -85,7 +93,11 @@ export function Home(props) {
       screenOptions={{
         tabBarActiveTintColor: "#DAF6B2", //change the active tab color to green
         tabBarInactiveTintColor: "white", //change the inactive tab color to white
-        tabBarStyle: { backgroundColor: "#396C4D" }, // hange the background color of the nav bar
+        tabBarStyle: {
+          backgroundColor: "#396C4D",
+          paddingTop: 35,
+          paddingBottom: 35,
+        }, // hange the background color of the nav bar
         tabBarLabelStyle: {
           fontFamily: "Neue-Light",
           fontSize: 12,
@@ -194,6 +206,66 @@ export function Home(props) {
         options={{
           ...commonOptions,
           tabBarLabel: "ShoppingCart",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="ArtistDetail"
+        component={ArtistDetail}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "ArtistDetail",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="StockroomDetail"
+        component={StockroomDetail}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "StockroomDetail",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="ArtworkEnquiry"
+        component={ArtworkEnquiry}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "ArtworkEnquiry",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="ShopDetail"
+        component={ShopDetail}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "ShopDetail",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="ArtSVisualiser"
+        component={ArtSVisualiser}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "ArtSVisualiser",
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="JournalDetail"
+        component={JournalDetail}
+        options={{
+          ...commonOptions,
+          tabBarLabel: "JournalDetail",
           tabBarButton: () => null,
         }}
       />

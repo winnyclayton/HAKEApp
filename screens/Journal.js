@@ -8,10 +8,12 @@ import {
   Image,
 } from "react-native";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigation } from "@react-navigation/native";
 
 export function Journal(props) {
   const [user, setUser] = useState();
   const Auth = useContext(AuthContext);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (Auth.currentUser) {
@@ -30,7 +32,7 @@ export function Journal(props) {
   const renderItem = ({ item }) => (
     <Pressable
       onPress={() => {
-        // Navigate to the journal detail page
+        navigation.navigate("JournalDetail")
       }}
       style={styles.journalItem}
     >
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
   journalImage: {
     flex: 1,
     width: "100%",
-    height: 400, // Set a fixed height for the image
-    resizeMode: "cover", // Maintain aspect ratio and cover the entire space
+    height: 400, 
+    resizeMode: "cover", 
   },
 });

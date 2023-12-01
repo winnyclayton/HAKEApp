@@ -10,16 +10,18 @@ import {
   Image,
 } from "react-native";
 import { useContext, useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/Ionicons"; // Import Ionicons from the library
+import Icon from "react-native-vector-icons/Ionicons"; 
 import "../assets/fonts/NeueMachina-Light.otf";
 import "../assets/fonts/NeueMachina-Regular.otf";
 import "../assets/fonts/NeueMachina-Ultrabold.otf";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigation } from "@react-navigation/native";
 
 export function Shop(props) {
   const [user, setUser] = useState();
 
   const Auth = useContext(AuthContext);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (Auth.currentUser) {
@@ -38,7 +40,7 @@ export function Shop(props) {
   const renderItem = ({ item }) => (
     <Pressable
       onPress={() => {
-        // Navigate to the ArtistsDetail page with the selected artist's details
+        navigation.navigate("ShopDetail")
       }}
       style={styles.shopallItem}
     >
@@ -139,6 +141,6 @@ const styles = StyleSheet.create({
   shopallPrice: {
     fontSize: 18,
     fontFamily: "Neue-Light",
-    color: "#black", // Adjust color as needed
+    color: "#black", 
   },
 });

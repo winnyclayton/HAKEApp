@@ -17,3 +17,13 @@
       url("assets/fonts/NeueMachina-Ultrabold.otf") format("opentype");
   }
 
+  @font-face {
+    font-family: "Darker-Light";  
+    src: local("Darker-Light"),
+      url("assets/fonts/DarkerGrotesque-VariableFont_wght.ttf") format("truetype");
+  }
+
+
+
+
+

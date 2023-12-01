@@ -8,10 +8,12 @@ import {
   Image,
 } from "react-native";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigation } from "@react-navigation/native";
 
 export function Artists(props) {
   const [user, setUser] = useState();
   const Auth = useContext(AuthContext);
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (Auth.currentUser) {
@@ -33,8 +35,7 @@ export function Artists(props) {
   const renderItem = ({ item }) => (
     <Pressable
       onPress={() => {
-        // Navigate to the ArtistsDetail page with the selected artist's details
-      }}
+        navigation.navigate("ArtistDetail")}}
       style={styles.artistItem}
     >
       <Image source={item} style={styles.artistImage} />
