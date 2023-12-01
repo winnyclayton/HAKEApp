@@ -31,9 +31,6 @@ export function ShoppingCart(props) {
         <Text style={styles.browseText}>Browse products</Text>
       </Pressable>
       <View style={styles.bottomContainer}>
-        {/* Your existing content */}
-
-        {/* Checkout Button */}
         <Pressable style={styles.checkoutButton}>
           <Text style={styles.checkoutText}>Checkout</Text>
         </Pressable>
@@ -76,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     padding: 18,
   },
-  // Checkout Button Styles
+
   checkoutButton: {
     backgroundColor: '#DEDEDE',
     borderColor: 'black',
